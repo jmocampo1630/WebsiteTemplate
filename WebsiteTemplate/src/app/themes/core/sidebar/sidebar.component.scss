@@ -1,24 +1,77 @@
 mat-sidenav {
-  margin: 16px;
-  width: 200px;
+  width: 232px;
   border-right: none;
-  background-color: #002b5c;
   color: white;
-  border-radius: 10px;
-  padding: 16px;
-  text-align: center;
 }
 
 .content {
   height: calc(100vh - 98px);
   margin: 16px;
-  margin-left: 32px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
+}
+
+.menu-item {
+  width: 100%;
+  font-weight: 500;
+  border-bottom: 1px solid #ededed;
+  position: relative;
+  cursor: pointer;
+}
+.menu-item:hover {
+  color: #598bff;
+}
+
+.active {
+  background: #bbbbbb36;
+  color: #598bff;
+}
+.tree ul {
+  overflow: hidden;
+  padding: unset;
+}
+
+.menu-item-content {
+  padding: 12px 16px;
+}
+
+::ng-deep .menu-item-child > mat-tree-node > .menu-item > p {
+  margin-left: 20px;
+}
+
+.menu-item-icon {
+  position: absolute;
+  left: 200px;
 }
 
 mat-sidenav-container {
   height: calc(100vh - 65px);
 }
+
+.mat-tree {
+  font-family: sans-serif;
+}
+
+.mat-tree-node {
+  min-height: unset !important;
+}
+
+
+.tree ul,
+.tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+p {
+  margin: unset;
+  display: unset;
+}
+
+// .tree .mat-nested-tree-node div[role="group"] {
+//   padding-left: 40px;
+// }
+
+// .tree div[role="group"] > .mat-tree-node {
+//   padding-left: 40px;
+// }

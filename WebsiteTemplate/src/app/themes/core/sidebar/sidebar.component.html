@@ -1,7 +1,28 @@
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>Start</mat-sidenav>
+  <mat-sidenav mode="side" opened>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree" >
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+          <li class="menu-item menu-item-content">
+            <p>{{node.name}}</p>
+          </li>
+      </mat-tree-node>
+      <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+        <div class="menu-item" matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+            <li class="menu-item-content">
+              <p>{{node.name}}</p>
+              <mat-icon class="mat-icon-rtl-mirror menu-item-icon">
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              </mat-icon>
+            </li>
+        </div>
+          <ul class="menu-item-child" [@slideVertical]="treeControl.isExpanded(node) ? 'show' : null">
+            <ng-container matTreeNodeOutlet></ng-container>
+        </ul>
+      </mat-nested-tree-node>
+    </mat-tree>
+  </mat-sidenav>
   <mat-sidenav-content>
-    <div class="content mat-elevation-z4">
+    <div class="content">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
