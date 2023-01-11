@@ -18,14 +18,12 @@ mat-sidenav {
   position: relative;
   cursor: pointer;
 }
-.menu-item:hover {
-  color: #598bff;
-}
 
 .active {
   background: #bbbbbb36;
-  color: #598bff;
+  color: #598bff !important;
 }
+
 .tree ul {
   overflow: hidden;
   padding: unset;
@@ -33,10 +31,31 @@ mat-sidenav {
 
 .menu-item-content {
   padding: 12px 16px;
+  color: var(--bs-gray-700);
 }
 
-::ng-deep .menu-item-child > mat-tree-node > .menu-item > p {
+.menu-item-content:hover {
+  color: #598bff;
+}
+
+.parent-menu:has(li.active) div .menu-item-content{
+  color: #598bff !important;
+}
+
+::ng-deep .menu-item-child > mat-tree-node > .menu-item > .menu-item-label {
   margin-left: 20px;
+}
+
+.label-text {
+  line-height: 1.6;
+}
+
+.label-icon {
+  margin-right: 0.25rem;
+}
+
+mat-icon {
+  font-size: 1.25rem !important;
 }
 
 .menu-item-icon {

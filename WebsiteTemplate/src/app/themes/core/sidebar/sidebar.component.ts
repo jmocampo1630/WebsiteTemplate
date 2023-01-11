@@ -10,38 +10,44 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+import { MenuItem } from '../../model/MenuItem';
 
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
 
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: MenuItem[] = [
   {
-    name: 'Fruit',
+    name: 'Home',
+    icon: 'home',
+    path: 'home'
   },
   {
     name: 'Vegetables',
+    icon: 'build',
     children: [
       {
         name: 'Green',
+        icon: 'cached',
+        path: 'cached'
       },
       {
         name: 'Orange',
+        icon: 'calendar_today',
+        path: 'calendar_today'
       },
     ],
   },
   {
-    name: 'Fruit',
-  },
-  {
     name: 'Vegetables',
+    icon: 'build',
     children: [
       {
         name: 'Green',
+        icon: 'cached',
+        path: 'cached2'
       },
       {
         name: 'Orange',
+        icon: 'calendar_today',
+        path: 'calendar_today2'
       },
     ],
   },
@@ -70,9 +76,9 @@ const TREE_DATA: FoodNode[] = [
   ],
 })
 export class SidebarComponent implements OnInit {
-  treeControl = new NestedTreeControl<FoodNode>((node) => node.children);
-  dataSource = new MatTreeNestedDataSource<FoodNode>();
-  hasChild = (_: number, node: FoodNode) =>
+  treeControl = new NestedTreeControl<MenuItem>((node) => node.children);
+  dataSource = new MatTreeNestedDataSource<MenuItem>();
+  hasChild = (_: number, node: MenuItem) =>
     !!node.children && node.children.length > 0;
 
   @ViewChild(MatSidenav) sideNav!: MatSidenav;
