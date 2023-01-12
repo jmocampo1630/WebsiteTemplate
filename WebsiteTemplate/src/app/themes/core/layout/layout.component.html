@@ -1,4 +1,6 @@
 <ng-container>
   <app-header (toggleSidebar)="toggleSidebar()"></app-header>
-  <app-sidebar #sidebarComponent></app-sidebar>
+  <app-sidebar #sidebarComponent>
+    <router-outlet></router-outlet>
+  </app-sidebar>
 </ng-container>
