@@ -11,47 +11,7 @@ import {
   animate,
 } from '@angular/animations';
 import { MenuItem } from '../../model/MenuItem';
-
-
-const TREE_DATA: MenuItem[] = [
-  {
-    name: 'Home',
-    icon: 'home',
-    path: 'home'
-  },
-  {
-    name: 'Vegetables',
-    icon: 'build',
-    children: [
-      {
-        name: 'Green',
-        icon: 'cached',
-        path: 'cached'
-      },
-      {
-        name: 'Orange',
-        icon: 'calendar_today',
-        path: 'calendar_today'
-      },
-    ],
-  },
-  {
-    name: 'Vegetables',
-    icon: 'build',
-    children: [
-      {
-        name: 'Green',
-        icon: 'cached',
-        path: 'cached2'
-      },
-      {
-        name: 'Orange',
-        icon: 'calendar_today',
-        path: 'calendar_today2'
-      },
-    ],
-  },
-];
+import { MENU_ITEMS } from 'src/app/pages/pages-menu';
 
 @Component({
   selector: 'app-sidebar',
@@ -87,7 +47,7 @@ export class SidebarComponent implements OnInit {
     private breakPointObserver: BreakpointObserver,
     private cdr: ChangeDetectorRef
   ) {
-    this.dataSource.data = TREE_DATA;
+    this.dataSource.data = MENU_ITEMS;
   }
 
   ngOnInit(): void {}

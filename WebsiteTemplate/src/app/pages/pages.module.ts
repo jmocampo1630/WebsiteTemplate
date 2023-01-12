@@ -6,12 +6,14 @@ import { PagesComponent } from './pages.component';
 import { ThemesModule } from '../themes/themes.module';
 import { HomeComponent } from './home/home.component';
 import { MaterialImportModule } from '../shared/module/material-import.module';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
   declarations: [
     PagesComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
