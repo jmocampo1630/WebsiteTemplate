@@ -3,7 +3,7 @@
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="tree" >
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
           <li class="menu-item menu-item-content" [routerLink]="['/' + node.path]" routerLinkActive="active" >
-            <div class="menu-item-label d-flex align-item-center">
+            <div class="menu-item-label d-flex align-items-center">
               <mat-icon class="label-icon">{{node.icon}}</mat-icon>
               <p class="label-text">{{node.name}}</p>
             </div>
@@ -12,7 +12,7 @@
       <mat-nested-tree-node class="parent-menu" *matTreeNodeDef="let node; when: hasChild">
         <div class="menu-item" matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
             <li class="menu-item-content d-flex justify-content-between">
-              <div class="menu-item-label d-flex align-item-center">
+              <div class="menu-item-label d-flex align-items-center">
                 <mat-icon class="label-icon">home</mat-icon>
                 <p class="label-text">{{node.name}}</p>
               </div>
